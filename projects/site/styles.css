@@ -495,7 +495,7 @@ a {
   overflow: hidden;
 }
 
-.hero-video {
+.hero-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1518,7 +1518,7 @@ a {
 
 /* ---- Smaller desktops / wide tablets (≤ 1180px) ---- */
 @media (max-width: 1180px) {
-  .hero-video {
+  .hero-image {
     object-position: center 0%;
   }
 
@@ -1538,7 +1538,7 @@ a {
     min-height: clamp(30rem, calc(74vh - 80px), 35rem);
   }
 
-  .hero-video {
+  .hero-image {
     object-position: center 0%;
   }
 
@@ -1617,7 +1617,7 @@ a {
     min-height: clamp(34rem, calc(86vh - 72px), 40rem);
   }
 
-  .hero-video {
+  .hero-image {
     object-position: center 0%;
   }
 
@@ -1730,7 +1730,7 @@ a {
   }
 
   /* Hide the landscape band photo — crops badly in portrait */
-  .hero-video {
+  .hero-image {
     display: none;
   }
 
@@ -2382,5 +2382,40 @@ a {
     width: calc(100vw - 2rem);
     right: 0;
   }
+}
+
+/* ACCESSIBILITY: visible keyboard focus
+   Mouse clicks stay clean (:focus-visible only targets keyboard focus). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.btn:focus-visible,
+.show-card:focus-visible,
+.gallery-grid img:focus-visible,
+.nav-toggle:focus-visible,
+.mobile-nav-close:focus-visible,
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 3px solid var(--accent, #7be0a3);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.gallery-grid img {
+  cursor: pointer;
+}
+
+/* Buttons shown as "coming soon" — look present but clearly inactive */
+.btn.is-disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.eyebrow--spaced {
+  margin-top: 1.75rem;
 }
 

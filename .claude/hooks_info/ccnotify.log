@@ -29,3 +29,6 @@
 2026-06-13 00:23:30 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
 2026-06-13 00:23:30 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#10, duration: 36s
 2026-06-13 00:25:19 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:31:25 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:31:25 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#11, duration: 6m5s
+2026-06-13 00:32:21 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1

@@ -8,6 +8,18 @@
       name="description"
       content="The Hounds of Cuchulain – original and traditional Celtic folk music. Listen, watch, find shows, and book the band."
     />
+    <link rel="canonical" href="https://houndsofcuchulain.com/" />
+    <!-- Social sharing (Open Graph + Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Hounds of Cuchulain" />
+    <meta property="og:title" content="The Hounds of Cuchulain | Celtic Folk Music" />
+    <meta property="og:description" content="Original and traditional Celtic folk music from Victoria, BC. Listen, watch, find shows, and book the band." />
+    <meta property="og:url" content="https://houndsofcuchulain.com/" />
+    <meta property="og:image" content="https://houndsofcuchulain.com/assets/hero-band.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Hounds of Cuchulain | Celtic Folk Music" />
+    <meta name="twitter:description" content="Original and traditional Celtic folk music from Victoria, BC." />
+    <meta name="twitter:image" content="https://houndsofcuchulain.com/assets/hero-band.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +27,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20260608e" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "The Hounds of Cuchulain",
+        "genre": ["Celtic folk", "Celtic punk"],
+        "url": "https://houndsofcuchulain.com/",
+        "image": "https://houndsofcuchulain.com/assets/hero-band.jpg",
+        "description": "Original and traditional Celtic folk music from Victoria, British Columbia.",
+        "foundingLocation": "Victoria, British Columbia, Canada",
+        "email": "hounds.of.cuchulain@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/hounds_of_cuchulain/",
+          "https://www.facebook.com/hounds.of.cuchulain",
+          "https://open.spotify.com/artist/7mEXgql2jvRmFcGCRFVzV3",
+          "https://houndsofcuchulain.bandcamp.com/",
+          "https://www.youtube.com/@houndsofcuchulain"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="site-bg" aria-hidden="true">
@@ -30,7 +62,7 @@
           </span>
         </a>
         <nav class="nav" aria-label="Main navigation">
-          <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
           </button>
           <ul class="nav-list">
@@ -47,7 +79,7 @@
     </header>
     <div class="nav-backdrop" aria-hidden="true"></div>
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+      <button type="button" class="mobile-nav-close" aria-label="Close menu">&times;</button>
       <ul>
         <li><a href="#top" class="active">Home</a></li>
         <li><a href="#shows">Shows</a></li>
@@ -64,7 +96,7 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-overlay"></div>
         <img
-          class="hero-video"
+          class="hero-image"
           src="assets/_1111255~3.JPG"
           alt="The Hounds of Cuchulain band portrait outdoors"
         />
@@ -181,13 +213,13 @@
             <article class="shop-item">
               <h3>Physical Albums</h3>
               <p>CDs and vinyl available at shows and via mail order.</p>
-              <a href="#" class="btn btn-outline btn-sm">View Albums</a>
+              <span class="btn btn-outline btn-sm is-disabled" aria-disabled="true">View Albums — coming soon</span>
             </article>
 
             <article class="shop-item">
               <h3>Merch</h3>
               <p>Shirts, hoodies and more – branded with Hounds artwork.</p>
-              <a href="#" class="btn btn-outline btn-sm">Browse Merch</a>
+              <span class="btn btn-outline btn-sm is-disabled" aria-disabled="true">Browse Merch — coming soon</span>
             </article>
 
             <article class="shop-item">

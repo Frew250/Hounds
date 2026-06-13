@@ -37,20 +37,24 @@ if (nav && navToggle) {
   });
 }
 
-// SMOOTH SCROLL FOR BUTTONS WITH data-scroll-target
-document.addEventListener("click", (event) => {
-  const target = event.target;
-  if (!(target instanceof HTMLElement)) return;
+// HELPERS
+// Escape any value coming from shows-data.js before putting it into innerHTML,
+// so a stray < or " in a venue name or description can never break the page.
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
-  const scrollTarget = target.dataset.scrollTarget;
-  if (!scrollTarget) return;
-
-  const destination = document.querySelector(scrollTarget);
-  if (destination) {
-    event.preventDefault();
-    destination.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-});
+// Only allow safe URL schemes for links built from data; reject "#"/empty.
+function safeUrl(value) {
+  const url = String(value ?? "").trim();
+  if (!url || url === "#") return null;
+  return /^(https?:|tel:|mailto:|\/|\.|#)/i.test(url) ? url : null;
+}
 
 // DYNAMIC SHOWS LIST (home and Shows page)
 // Data comes from global window.showsData defined in shows-data.js
@@ -59,10 +63,27 @@ const showsDetailBodyEl = document.querySelector(".shows-detail-body");
 const showsScope = showsListEl ? showsListEl.getAttribute("data-shows-scope") || "upcoming" : "upcoming";
 let renderedShows = [];
 
+const MONTHS = {
+  jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+  jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
+};
+
 function parseShowDate(show) {
-  // Expect formats like "Jan 15, 2026"
-  const parsed = Date.parse(show.date);
-  return Number.isNaN(parsed) ? new Date() : new Date(parsed);
+  // Build a local-midnight date so timezones never shift the day.
+  // Accepts ISO ("2026-01-15") and "Jan 15, 2026".
+  const raw = String(show.date || "").trim();
+
+  const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (iso) return new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
+
+  const named = raw.match(/^([A-Za-z]{3,})\s+(\d{1,2}),?\s+(\d{4})$/);
+  if (named) {
+    const month = MONTHS[named[1].slice(0, 3).toLowerCase()];
+    if (month !== undefined) return new Date(Number(named[3]), month, Number(named[2]));
+  }
+
+  const fallback = Date.parse(raw);
+  return Number.isNaN(fallback) ? new Date() : new Date(fallback);
 }
 
 function isUpcomingShow(show) {
@@ -165,17 +186,18 @@ function renderShows() {
     card.className = showStatus.isPast ? "show-card show-card--past" : "show-card";
     card.setAttribute("data-index", String(index));
 
-    const badgeHtml = showStatus.href
-      ? `<a href="${showStatus.href}" class="${showStatus.className}" ${showStatus.external ? 'target="_blank" rel="noopener noreferrer"' : ""} onclick="event.stopPropagation()">${showStatus.label}</a>`
-      : `<span class="${showStatus.className}">${showStatus.label}</span>`;
+    const badgeHref = safeUrl(showStatus.href);
+    const badgeHtml = badgeHref
+      ? `<a href="${escapeHtml(badgeHref)}" class="${showStatus.className}" ${showStatus.external ? 'target="_blank" rel="noopener noreferrer"' : ""} onclick="event.stopPropagation()">${escapeHtml(showStatus.label)}</a>`
+      : `<span class="${showStatus.className}">${escapeHtml(showStatus.label)}</span>`;
 
     card.innerHTML = `
       <div>
-        <div class="show-date">${show.date}</div>
+        <div class="show-date">${escapeHtml(show.date)}</div>
       </div>
       <div>
-        <div class="show-city">${show.city}</div>
-        <div class="show-venue">${show.venue}</div>
+        <div class="show-city">${escapeHtml(show.city)}</div>
+        <div class="show-venue">${escapeHtml(show.venue)}</div>
       </div>
       ${badgeHtml}
     `;
@@ -223,33 +245,31 @@ function selectShow(index, options = {}) {
     }
   }
 
-  const timeFragment = show.time ? `<p><strong>Time:</strong> ${show.time}</p>` : "";
+  const timeFragment = show.time ? `<p><strong>Time:</strong> ${escapeHtml(show.time)}</p>` : "";
 
-  const callFragment = show.phone
-    ? `<a href="tel:${show.phone}" class="show-status show-status--call">Call to reserve: ${formatPhone(show.phone)}</a>`
+  const callHref = safeUrl(show.phone ? `tel:${show.phone}` : null);
+  const callFragment = callHref
+    ? `<a href="${escapeHtml(callHref)}" class="show-status show-status--call">Call to reserve: ${escapeHtml(formatPhone(show.phone))}</a>`
     : `<span class="show-status show-status--call">Call to reserve</span>`;
 
-  const infoFragment = showStatus.href
-    ? `<a href="${showStatus.href}" class="btn btn-outline" ${showStatus.external ? 'target="_blank" rel="noopener noreferrer"' : ""}>${showStatus.label}</a>`
-    : `<span class="${showStatus.className}">${showStatus.label}</span>`;
+  const actionHref = safeUrl(showStatus.href);
+  const actionFragment = showStatus.isPast
+    ? `<span class="${showStatus.className}">${escapeHtml(showStatus.label)}</span>`
+    : show.status === "call"
+      ? callFragment
+      : show.status === "soldout"
+        ? `<span class="show-status show-status--soldout">Sold Out</span>`
+        : actionHref
+          ? `<a href="${escapeHtml(actionHref)}" class="btn btn-outline" ${showStatus.external ? 'target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(showStatus.label)}</a>`
+          : `<span class="${showStatus.className}">${escapeHtml(show.status === "tickets" ? "Details coming soon" : showStatus.label)}</span>`;
 
   showsDetailBodyEl.innerHTML = `
-    <p><strong>Date:</strong> ${show.date}</p>
-    <p><strong>City:</strong> ${show.city}</p>
-    <p><strong>Venue:</strong> ${show.venue}</p>
+    <p><strong>Date:</strong> ${escapeHtml(show.date)}</p>
+    <p><strong>City:</strong> ${escapeHtml(show.city)}</p>
+    <p><strong>Venue:</strong> ${escapeHtml(show.venue)}</p>
     ${timeFragment}
-    <p>${show.description}</p>
-    ${
-      showStatus.isPast
-        ? `<span class="${showStatus.className}">${showStatus.label}</span>`
-        : show.status === "tickets"
-        ? `<a href="${show.ticketUrl}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get Tickets</a>`
-        : show.status === "call"
-          ? callFragment
-          : show.status === "info"
-            ? infoFragment
-          : `<span class="show-status show-status--soldout">Sold Out</span>`
-    }
+    <p>${escapeHtml(show.description)}</p>
+    ${actionFragment}
   `;
 
   showsDetailBodyEl.hidden = false;
@@ -304,9 +324,29 @@ let lbImages = [];
 let lbIndex = 0;
 
 if (lightbox && lightboxImg) {
+  const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let lastFocused = null;
+
+  // Make each gallery photo reachable and openable by keyboard.
+  galleryImages.forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    if (!img.getAttribute("aria-label")) {
+      img.setAttribute("aria-label", `${img.alt || "Photo"} — open larger view`);
+    }
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        lbImages = galleryImages;
+        lbIndex = galleryImages.indexOf(img);
+        openLightbox();
+      }
+    });
+  });
+
   document.addEventListener("click", (e) => {
     if (e.target.closest(".gallery-grid") && e.target.tagName === "IMG") {
-      lbImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+      lbImages = galleryImages.length ? galleryImages : Array.from(document.querySelectorAll(".gallery-grid img"));
       lbIndex = lbImages.indexOf(e.target);
       openLightbox();
     }
@@ -315,6 +355,9 @@ if (lightbox && lightboxImg) {
   function openLightbox() {
     const img = lbImages[lbIndex];
     if (!img) return;
+    if (!lightbox.classList.contains("open")) {
+      lastFocused = document.activeElement;
+    }
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
     lightbox.classList.add("open");
@@ -322,6 +365,7 @@ if (lightbox && lightboxImg) {
     document.body.style.overflow = "hidden";
     if (lbPrevBtn) lbPrevBtn.disabled = lbIndex === 0;
     if (lbNextBtn) lbNextBtn.disabled = lbIndex === lbImages.length - 1;
+    if (lightboxClose) lightboxClose.focus();
   }
 
   function closeLightbox() {
@@ -329,6 +373,11 @@ if (lightbox && lightboxImg) {
     lightbox.setAttribute("aria-hidden", "true");
     lightboxImg.src = "";
     document.body.style.overflow = "";
+    // Return focus to the photo the user opened from.
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+      lastFocused = null;
+    }
   }
 
   if (lbPrevBtn) lbPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); if (lbIndex > 0) { lbIndex--; openLightbox(); } });
@@ -340,6 +389,15 @@ if (lightbox && lightboxImg) {
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowLeft" && lbIndex > 0) { lbIndex--; openLightbox(); }
     if (e.key === "ArrowRight" && lbIndex < lbImages.length - 1) { lbIndex++; openLightbox(); }
+    if (e.key === "Tab") {
+      // Keep keyboard focus inside the open photo viewer.
+      const focusables = [lbPrevBtn, lbNextBtn, lightboxClose].filter((el) => el && !el.disabled);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 }
 
