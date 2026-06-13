@@ -1,20 +1,25 @@
-2026-06-12 23:32:21 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:32:43 - WARNING - Windows notification used unknown fallback for hounds-of-cuchulain - Task complete: unknown toast error
-2026-06-12 23:32:43 - INFO - Notification sent: hounds-of-cuchulain - Task complete via unknown
-2026-06-12 23:32:43 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#1, duration: 21s
-2026-06-12 23:33:17 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:35:15 - INFO - Notification sent: Agentic OS - Task complete via toast
-2026-06-12 23:35:15 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#2, duration: 1m57s
-2026-06-12 23:37:18 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:38:26 - INFO - Notification sent: Agentic OS - Task complete via toast
-2026-06-12 23:38:26 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#3, duration: 1m7s
-2026-06-12 23:39:01 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:39:47 - INFO - Notification sent: Agentic OS - Task complete via toast
-2026-06-12 23:39:47 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#4, duration: 45s
-2026-06-12 23:40:06 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:40:15 - INFO - Notification sent: Agentic OS - Task complete via toast
-2026-06-12 23:40:15 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#5, duration: 9s
-2026-06-12 23:40:26 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
-2026-06-12 23:40:45 - INFO - Notification sent: Agentic OS - Task complete via toast
-2026-06-12 23:40:45 - INFO - Task completed for session 9c1ddfc8-a310-421b-8c45-aec1b742027b, job#6, duration: 18s
-2026-06-12 23:41:59 - INFO - Recorded prompt for session 9c1ddfc8-a310-421b-8c45-aec1b742027b
+2026-06-13 00:01:27 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:01:36 - INFO - Notification sent: Agentic OS - Task complete via toast
+2026-06-13 00:01:36 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#1, duration: 9s
+2026-06-13 00:02:06 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:02:19 - INFO - Notification sent: Agentic OS - Task complete via toast
+2026-06-13 00:02:19 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#2, duration: 12s
+2026-06-13 00:02:55 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:05:05 - INFO - Notification sent: Agentic OS - Task complete via toast
+2026-06-13 00:05:05 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#3, duration: 2m9s
+2026-06-13 00:09:30 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:09:42 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:09:42 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#4, duration: 12s
+2026-06-13 00:10:10 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:12:19 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:12:19 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#5, duration: 2m9s
+2026-06-13 00:12:46 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:13:28 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:13:28 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#6, duration: 42s
+2026-06-13 00:18:12 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:19:08 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:19:08 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#7, duration: 56s
+2026-06-13 00:19:47 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1
+2026-06-13 00:19:53 - ERROR - Error sending notification: windows-notify.ps1 not found at c:\Users\Test\Desktop\HOunds Site Repo\hounds-of-cuchulain\scripts\windows-notify.ps1
+2026-06-13 00:19:53 - INFO - Task completed for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1, job#8, duration: 6s
+2026-06-13 00:20:13 - INFO - Recorded prompt for session 693e5ba4-3ed9-4dfa-a13e-6467d7d15ed1

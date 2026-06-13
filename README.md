@@ -12,9 +12,6 @@ This repo holds the band's website alongside the tooling used to build and maint
 | [`projects/briefs/`](projects/briefs/) | Project briefs and specs |
 | [`brand_context/`](brand_context/) | Brand voice and positioning reference |
 | [`context/`](context/) | Working notes, memory, and learnings |
-| [`cron/`](cron/) | Scheduled job definitions |
-| [`scripts/`](scripts/) | Workspace automation and setup scripts |
-| [`_template/`](_template/) | Project scaffolding template |
 
 ## The website
 
