@@ -162,7 +162,7 @@ After both sections, ask: "Anything you want to dig into, or would you like me t
 - Read `context/learnings.md` (`## ops-gmail-triage`) before starting — it may contain sender-specific priority rules, confirmed label mappings, or CRM contact classifications.
 - **user_email**: `craigfrew4@gmail.com` — used to detect "Waiting on Them" threads where Craig sent the last message.
 - **stale_threshold**: 7 days — threads with no activity beyond this are flagged as Gone Cold.
-- **crm_labels**: Store confirmed CRM label names here after first run, e.g. `clients, prospects, CampMatch`
+- **crm_labels**: Store confirmed CRM label names here after first run, e.g. `clients, prospects, bookings`
 - Don't take actions (label, archive, reply, delete) unless the user explicitly asks.
 - Don't fabricate urgency. If unclear whether something is urgent, use 🟡.
 
@@ -171,5 +171,5 @@ After both sections, ask: "Anything you want to dig into, or would you like me t
 If the user corrects a categorisation, confirms a label as CRM-relevant, or adjusts the stale threshold, update the `## Rules` section immediately with a dated entry. Format:
 
 ```
-- {YYYY-MM-DD}: {Rule — e.g. "Emails from noreply@stripe.com always → Archive", "Label 'campMatch' is a CRM label", "stale_threshold changed to 14 days"}
+- {YYYY-MM-DD}: {Rule — e.g. "Emails from noreply@stripe.com always → Archive", "Label 'bookings' is a CRM label", "stale_threshold changed to 14 days"}
 ```

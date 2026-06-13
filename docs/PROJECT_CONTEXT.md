@@ -1,8 +1,8 @@
 # PROJECT_CONTEXT.md — Hounds of Cuchulain Website
 
-The full source-of-truth context for the agents. Read this before planning or
-implementing any step. For the workflow rules themselves, see
-`.github/copilot-instructions.md`.
+The source-of-truth context for the website. Read this before planning or
+implementing any change. For how Claude should work in this repo, see
+`AGENTS.md` at the repo root.
 
 ---
 
@@ -71,6 +71,8 @@ projects/site/
    tokens, or private endpoints in the HTML/JS.
 6. **Content is the user's call.** Show dates, prices, bios, quotes, and links
    are content — confirm with the user; never invent them.
+7. **Docs track reality.** If this document and the live site disagree, the live
+   site wins for implementation details — update this doc to match.
 
 ---
 
@@ -111,5 +113,4 @@ projects/site/
 
 This document is derived from `projects/briefs/hounds-site/brief.md`. When the
 brief and the live site disagree, the live site wins for implementation details;
-update this doc to match reality (per the Living Architecture Protocol in
-`.github/copilot-instructions.md`).
+update this doc to match reality.
