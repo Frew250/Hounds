@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Hounds of Cuchulain | Shows</title>
+    <meta
+      name="description"
+      content="Upcoming shows and tour dates for The Hounds of Cuchulain."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260608e" />
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true">
+      <img src="assets/Untitled%20design%20(3)_edited_edited_edited_edited.png" alt="" class="site-bg-img" />
+    </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html#top" class="logo">
+          <img class="logo-img" src="assets/hounds-logo.png" alt="The Hounds of Cuchulain" />
+          <span class="logo-text">
+            <span class="logo-main">The Hounds of Cuchulain</span>
+            <span class="logo-sub">Celtic Folk Music</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="shows.html" class="active">Shows</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="media.html">Media</a></li>
+            <li><a href="epk.html">EPK</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-backdrop" aria-hidden="true"></div>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shows.html" class="active">Shows</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="epk.html">EPK</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <section id="shows" class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Shows</p>
+            <h2>Show Calendar</h2>
+            <p>Browse upcoming dates first, then past performances in one place.</p>
+          </div>
+
+          <div class="shows-layout">
+            <div class="shows-list" aria-live="polite" data-shows-scope="all"></div>
+            <aside class="shows-detail" aria-label="Show details">
+              <div class="shows-detail-inner">
+                <h3>Show Details</h3>
+                <p class="muted">Choose a date on the left to see more info.</p>
+                <div class="shows-detail-body" hidden></div>
+              </div>
+            </aside>
+          </div>
+
+          <div class="shows-cta">
+            <p>Want to bring the Hounds to your venue or festival?</p>
+            <a href="index.html#contact" class="btn btn-outline">Request a Booking</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> The Hounds of Cuchulain. All rights reserved.</p>
+        <a href="#shows" class="back-to-top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="shows-data.js?v=20260608e"></script>
+    <script src="script.js?v=20260608e"></script>
+  </body>
+</html>
+

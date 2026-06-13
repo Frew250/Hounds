@@ -1,0 +1,29 @@
+{
+  "installed_at": "2026-05-14",
+  "version": "1.0.0",
+  "installed_skills": [
+    "meta-skill-creator",
+    "meta-wrap-up",
+    "mkt-brand-voice",
+    "mkt-content-repurposing",
+    "mkt-copywriting",
+    "mkt-icp",
+    "mkt-positioning",
+    "ops-cron",
+    "str-ai-seo",
+    "str-trending-research",
+    "tool-firecrawl-scraper",
+    "tool-humanizer",
+    "viz-excalidraw-diagram",
+    "viz-interface-design",
+    "viz-nano-banana"
+  ],
+  "removed_skills": [
+    "mkt-ugc-scripts",
+    "tool-stitch",
+    "tool-youtube",
+    "viz-stitch-design",
+    "viz-ugc-heygen"
+  ],
+  "selection_pending": false
+}

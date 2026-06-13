@@ -1,0 +1,32 @@
+{
+  "selected": [
+    "meta-skill-creator",
+    "meta-wrap-up",
+    "mkt-brand-voice",
+    "mkt-content-repurposing",
+    "mkt-copywriting",
+    "mkt-icp",
+    "mkt-positioning",
+    "ops-cron",
+    "str-ai-seo",
+    "str-trending-research",
+    "tool-firecrawl-scraper",
+    "tool-humanizer",
+    "viz-excalidraw-diagram",
+    "viz-interface-design",
+    "viz-nano-banana"
+  ],
+  "removed": [
+    "mkt-ugc-scripts",
+    "tool-stitch",
+    "tool-youtube",
+    "viz-stitch-design",
+    "viz-ugc-heygen"
+  ],
+  "services_needed": [
+    "FIRECRAWL_API_KEY",
+    "GEMINI_API_KEY",
+    "OPENAI_API_KEY",
+    "XAI_API_KEY"
+  ]
+}
