@@ -503,7 +503,6 @@ a {
   object-fit: cover;
   /* Keep the band centered with this taller group photo. */
   object-position: center 6%;
-  filter: saturate(0.85) contrast(0.95) brightness(0.88);
   transform: translate3d(0, 0, 0);
 }
 
