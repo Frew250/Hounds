@@ -214,7 +214,7 @@ window.showsData = [
     description: "Evening performance at Mary's Bleue Moon in Sidney. Call ahead to reserve.",
   },
   {
-    date: "Jul 10, 2026",
+    date: "Jul 17, 2026",
     city: "Oak Bay, BC",
     venue: "The Oaks Restaurant and Tearoom",
     time: "7:00 PM - 9:00 PM",
@@ -269,7 +269,7 @@ window.showsData = [
   },
   {
     date: "Aug 13, 2026",
-    city: "TBA",
+    city: "Cobble Hill, BC",
     venue: "Music in the Park",
     time: "6:30 PM - 7:30 PM",
     status: "info",
@@ -296,7 +296,7 @@ window.showsData = [
   },
   {
     date: "Aug 21, 2026",
-    city: "TBA",
+    city: "Qualicum Beach, BC",
     venue: "Dashwood House",
     time: "6:00 PM - 8:00 PM",
     status: "info",
@@ -314,16 +314,16 @@ window.showsData = [
   },
   {
     date: "Aug 23, 2026",
-    city: "TBA",
+    city: "Port McNeill, BC",
     venue: "Devil's Bath",
     time: "2:30 PM - 3:30 PM",
     status: "info",
     statusLabel: "Special set",
-    description: "Late-night special set at Devil's Bath.",
+    description: "Afternoon set at Devil's Bath Brewing Co.",
   },
   {
     date: "Aug 29, 2026",
-    city: "TBA",
+    city: "Sidney, BC",
     venue: "Sails & Sagas Festival",
     time: "",
     status: "info",
@@ -332,7 +332,7 @@ window.showsData = [
   },
   {
     date: "Aug 30, 2026",
-    city: "TBA",
+    city: "Sidney, BC",
     venue: "Sails & Sagas Festival",
     time: "",
     status: "info",
@@ -341,7 +341,7 @@ window.showsData = [
   },
   {
     date: "Sep 05, 2026",
-    city: "TBA",
+    city: "Victoria, BC",
     venue: "Classic Boat Festival",
     time: "12:30 PM - 1:30 PM",
     status: "info",
