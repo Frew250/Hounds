@@ -214,6 +214,15 @@ window.showsData = [
     description: "Evening performance at Mary's Bleue Moon in Sidney. Call ahead to reserve.",
   },
   {
+    date: "Jul 10, 2026",
+    city: "Oak Bay, BC",
+    venue: "The Oaks Restaurant and Tearoom",
+    time: "7:00 PM - 9:00 PM",
+    status: "call",
+    phone: OAKS_PHONE,
+    description: "Evening performance at The Oaks in Oak Bay. Call the venue to reserve a table.",
+  },
+  {
     date: "Jul 17, 2026",
     city: "Oak Bay, BC",
     venue: "The Oaks Restaurant and Tearoom",
