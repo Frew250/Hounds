@@ -188,12 +188,12 @@ window.showsData = [
   },
   {
     date: "Jul 01, 2026",
-    city: "TBA",
+    city: "Vancouver, BC",
     venue: "Scottish Cultural Centre",
     time: "2:00 PM - 4:00 PM",
     status: "info",
-    statusLabel: "Community event",
-    description: "Afternoon performance at the Scottish Cultural Centre.",
+    statusLabel: "Canada Day",
+    description: "Canada Day celebrations at the Scottish Cultural Centre.",
   },
   {
     date: "Jul 04, 2026",
