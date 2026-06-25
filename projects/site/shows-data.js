@@ -188,7 +188,7 @@ window.showsData = [
   },
   {
     date: "Jul 01, 2026",
-    city: "Vancouver, BC",
+    city: "Victoria, BC",
     venue: "Scottish Cultural Centre",
     time: "2:00 PM - 4:00 PM",
     status: "info",
