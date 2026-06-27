@@ -27,7 +27,7 @@ content.
 | Markup | HTML5 (multi-page, hand-authored) |
 | Styling | CSS3 — single stylesheet, no preprocessor |
 | Behaviour | Vanilla JavaScript — no framework, no bundler |
-| Fonts | Cinzel (headings) + Inter (body), via Google Fonts |
+| Fonts | Display/headings: local "Livingstone" with Cinzel fallback; body: Inter (Cinzel + Inter via Google Fonts, Livingstone in `projects/site/livingstone/`) |
 | Build step | **None** — static files, open directly or serve the folder |
 | Backend / DB / Auth | **None** — fully static |
 | Hosting | Static host (GitHub Pages, Netlify, or similar) |
