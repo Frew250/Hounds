@@ -27,7 +27,7 @@ Build and maintain the public website for The Hounds of Cuchulain Celtic folk ba
 - **Tagline:** "Celtic Folk, Loud & Alive"
 - **Typical set:** 60–90 minutes, flexible
 - **Ideal for:** Festivals, theatres, pubs, special events
-- **Contact:** info@houndsofcuchulain.com
+- **Contact:** hounds.of.cuchulain@gmail.com
 
 ## Tech stack
 - Vanilla HTML/CSS/JS (no framework)

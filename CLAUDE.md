@@ -90,17 +90,13 @@ user-facing copy (visual hierarchy, spacing, responsive behaviour, accessibility
 on a real change as a cue to prompt harder, not as success. Full protocol: `CUSTOMIZE.md`
 Section 5.
 
-## Gaps still open
+## Project decisions (don't re-litigate)
 
-- **Contact email is inconsistent** — the live site uses `hounds.of.cuchulain@gmail.com`
-  (contact section + structured data), but `AGENTS.md` / `README.md` / `PROJECT_CONTEXT.md`
-  say `info@houndsofcuchulain.com`. Confirm the correct one before touching contact copy.
-- **Dormant chat widget** — `projects/site/chat.js` and its `#hc-/.hc-*` CSS exist, but **no page
-  loads `chat.js`** (pages load `script.js` + `shows-data.js` only). Treat the chat bot as
-  off until the owner decides to enable or remove it.
-- **Band members / lineup + roles** — not documented; bio is kept general until confirmed.
-- **Album "The Unsung"** — confirm details to work into bio/EPK.
-- **Contact form** — currently a `mailto:` link; no form service (Formspree/Netlify) wired.
+- **Contact:** show the email `hounds.of.cuchulain@gmail.com` directly. **No contact form** — by design.
+- **Band members:** do **not** name the lineup (it changes). Keep bios, credits, and copy general.
+
+## Open items
+
+- **Album "The Unsung"** — confirm details to work into the bio / EPK.
 - **EPK "Download Full EPK (PDF)"** — button is "coming soon"; the PDF doesn't exist yet.
-- **`.env`** — a git-ignored leftover from the old scaffold; the static site itself needs no
-  environment variables. Re-confirm before relying on it.
+- **`.env`** — a git-ignored leftover from the old scaffold; the static site needs no env vars.

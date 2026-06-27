@@ -45,7 +45,7 @@ python -m http.server 8000
 - **Genre:** Celtic folk / Celtic punk-influenced
 - **Home base:** Victoria, BC (Vancouver Island & touring)
 - **Typical set:** 60–90 minutes, flexible — festivals, theatres, pubs, special events
-- **Contact:** info@houndsofcuchulain.com
+- **Contact:** hounds.of.cuchulain@gmail.com
 
 ## Notes
 

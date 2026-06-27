@@ -26,4 +26,4 @@ Based on Vancouver Island and available for festivals, theatres, pubs, and priva
 
 ---
 
-*Open items: confirm band members/roles, add a line about the album "The Unsung," and any origin/history detail when available.*
+*Open items: add a line about the album "The Unsung" and any origin/history detail when available. Band members are intentionally not named — the lineup changes.*

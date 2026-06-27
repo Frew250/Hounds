@@ -51,6 +51,6 @@ python -m http.server 8000
 
 ## Notes
 
-- Band contact: info@houndsofcuchulain.com
+- Band contact: hounds.of.cuchulain@gmail.com
 - Full brief and open items: [`projects/briefs/hounds-site/brief.md`](projects/briefs/hounds-site/brief.md)
 - Secrets live in `.env` (git-ignored) — never commit them.

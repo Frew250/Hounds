@@ -95,7 +95,7 @@ projects/site/
 - **Home base:** Victoria, BC (Vancouver Island & touring)
 - **Typical set:** 60–90 minutes, flexible
 - **Ideal for:** Festivals, theatres, pubs, special events
-- **Contact:** info@houndsofcuchulain.com
+- **Contact:** hounds.of.cuchulain@gmail.com
 
 ---
 
